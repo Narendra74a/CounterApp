@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
-import { useState } from 'react'
+import { useState } from 'react';
+import './App.css'
 
 function App() {
+  // const name=
   const [count,setCount]=useState(()=>{
     return parseInt(localStorage.getItem('counter') )||0;
   })
@@ -22,11 +24,13 @@ function App() {
     // setCount(count=>count+2)
   }
   return (
-    <div>
-      <h1>Count :{count}</h1>
-      <button onClick={IncrseValue}>+</button>
+    <div className='home'>
+      <h1>  {count}</h1>
+    <div className='btns'>
       <button onClick={DecreasValue}>-</button>
-      <button onClick={Reset}>Rset</button>
+      <button onClick={Reset}>Rst</button>
+    </div>
+    <button className='block' onClick={IncrseValue}>+</button>
     </div>
   )
 }
